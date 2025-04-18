@@ -766,25 +766,5 @@ document.addEventListener('DOMContentLoaded', () => {
     renderTasks();
     renderFolders();
     updateTaskCounts();
-    initializeCharts();
-    // new change to code
-        // new change to code
-
-            // new change to code
-
-                // new change to code
-
-                    // new change to code
-
-                        // new change to code
-
-                            // new change to code
-
-                                // new change to code
-
-                                    // new change to code
-
-                                        // new change to code
-
-                                        
+    initializeCharts();                                 
 }); 

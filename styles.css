@@ -138,12 +138,14 @@ body {
 
 .panel-header {
     padding-bottom: 24px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 24px;
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
 }
 
@@ -251,10 +253,15 @@ body {
 /* Projects List */
 .projects-list {
     display: grid;
+    grid-template-columns: 1fr;
     gap: 16px;
+    padding: 0;
 }
 
 .project-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
     background: var(--background-light);
     border-radius: 12px;
     padding: 16px;
@@ -781,8 +788,22 @@ body {
     }
 
     .task-actions {
-        flex-direction: column;
-        gap: 8px;
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .task-actions .btn-primary {
+        width: auto;
+        padding: 8px 16px;
+    }
+
+    .task-actions .btn-primary span:not(.material-icons) {
+        display: none;
+    }
+
+    .task-actions .btn-primary .material-icons {
+        margin: 0;
     }
 
     .task-filter select {
@@ -792,6 +813,20 @@ body {
     .modal-content {
         width: 95%;
         margin: 20px;
+    }
+
+    .folder-actions {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .folder-actions .search-container {
+        width: 60%;
+    }
+    
+    .folder-actions .btn-primary {
+        width: 35%;
     }
 }
 
@@ -1068,22 +1103,20 @@ body {
 
 .folder-actions {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-end;
-    margin-right: -24px;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .folder-actions .search-container {
-    width: 250px;
-    margin-right: 24px;
-    display: flex;
-    align-items: center;
-    background: var(--background-light);
+    flex: 1;
+    margin: 0;
 }
 
 .folder-actions .search-container input {
     width: 100%;
+    height: 40px;
     padding: 8px 12px;
     padding-left: 36px;
     border: 1px solid var(--border-color);
@@ -1092,11 +1125,12 @@ body {
 }
 
 .folder-actions .btn-primary {
-    width: 250px;
+    height: 40px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    margin-right: 24px;
-    padding: 8px 16px;
-    font-size: 14px;
+    white-space: nowrap;
 }
 
 /* Update existing header content styles */
@@ -1105,4 +1139,290 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .main-content {
+        padding: 20px;
+    }
+    
+    .panel {
+        padding: 20px;
+    }
+    
+    .projects-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 992px) {
+    .main-nav {
+        width: 200px;
+    }
+    
+    .main-content {
+        margin-left: 200px;
+    }
+    
+    .search-container input,
+    .task-actions .btn-primary {
+        width: 180px;
+    }
+    
+    .projects-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        width: 72px;
+        padding: 16px 8px;
+    }
+    
+    .main-content {
+        margin-left: 72px;
+    }
+    
+    .nav-logo span:not(.material-icons) {
+        display: none;
+    }
+    
+    .nav-item span:not(.material-icons) {
+        display: none;
+    }
+    
+    .panel-header {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .header-right {
+        width: 100%;
+    }
+    
+    .header-icons {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .search-container input,
+    .task-actions .btn-primary {
+        width: 100%;
+    }
+    
+    .task-actions {
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    .task-actions .btn-primary {
+        width: auto;
+        padding: 8px 16px;
+    }
+    
+    .task-actions .btn-primary span:not(.material-icons) {
+        display: none;
+    }
+    
+    .task-actions .btn-primary .material-icons {
+        margin: 0;
+    }
+    
+    .status-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .task-card {
+        padding: 12px;
+    }
+    
+    .task-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .modal-content {
+        width: 90%;
+        max-width: none;
+    }
+    
+    .projects-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+        padding: 14px;
+    }
+    
+    .project-header {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .project-title {
+        width: 100%;
+    }
+    
+    .project-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    .folder-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .folder-actions .search-container,
+    .folder-actions .btn-primary {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-nav {
+        width: 60px;
+        padding: 12px 6px;
+    }
+    
+    .main-content {
+        margin-left: 60px;
+        padding: 12px;
+    }
+    
+    .panel {
+        padding: 16px;
+    }
+    
+    .nav-item {
+        padding: 8px;
+        justify-content: center;
+    }
+    
+    .task-card {
+        padding: 10px;
+    }
+    
+    .task-title-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    
+    .task-actions {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+    }
+    
+    .task-filter {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .task-filter select {
+        width: auto;
+        min-width: 120px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: 16px;
+    }
+    
+    .form-group {
+        margin-bottom: 12px;
+    }
+    
+    .modal-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .modal-actions button {
+        width: 100%;
+    }
+    
+    .project-card {
+        padding: 12px;
+    }
+    
+    .project-description {
+        font-size: 13px;
+    }
+    
+    .project-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .project-actions .btn-primary {
+        padding: 6px 10px;
+    }
+    
+    .folder-dropdown {
+        width: 100%;
+    }
+    
+    .folder-dropdown-toggle {
+        width: 100%;
+    }
+}
+
+/* Landscape mode for mobile devices */
+@media (max-height: 500px) and (orientation: landscape) {
+    .main-nav {
+        width: 60px;
+        padding: 8px 4px;
+    }
+    
+    .nav-item {
+        padding: 6px;
+    }
+    
+    .panel {
+        padding: 12px;
+    }
+    
+    .task-card {
+        padding: 8px;
+    }
+    
+    .modal-content {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    
+    .projects-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+        padding: 10px;
+    }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .material-icons {
+        font-size: 20px;
+    }
+    
+    .nav-logo .material-icons {
+        font-size: 22px;
+    }
 } 
